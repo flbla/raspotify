@@ -4,7 +4,7 @@ set -e
 
 if [ ! -d apt-repo ]; then
     echo 'Clone gh-pages branch into apt-repo folder: '
-    echo '    git clone -b gh-pages --single-branch git@github.com:dtcooper/raspotify.git apt-repo'
+    echo '    git clone -b gh-pages --single-branch git@github.com:flbla/raspotify.git apt-repo'
     exit 1
 fi
 

@@ -1,8 +1,8 @@
 [Unit]
 Description=Raspotify (Spotify Connect Client)
-Documentation=https://github.com/dtcooper/raspotify
+Documentation=https://github.com/flbla/raspotify
 Documentation=https://github.com/librespot-org/librespot
-Documentation=https://github.com/dtcooper/raspotify/wiki
+Documentation=https://github.com/flbla/raspotify/wiki
 Documentation=https://github.com/librespot-org/librespot/wiki/Options
 Wants=network.target sound.target
 After=network.target sound.target

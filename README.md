@@ -1,5 +1,5 @@
 
-[<img src="https://raw.githubusercontent.com/dtcooper/raspotify/master/raspotify.svg?sanitize=true">](https://github.com/dtcooper/raspotify)
+[<img src="https://raw.githubusercontent.com/flbla/raspotify/master/raspotify.svg?sanitize=true">](https://github.com/flbla/raspotify)
 
 Raspotify is a [Debian package and associated repository](https://en.wikipedia.org/wiki/Deb_(file_format)) for [Debian Stable](https://www.debian.org/releases/stable/) ( ***Currently Debian 11 "Bullseye"*** ) and other Debian Stable based/compatible OS's ( ***your mileage may vary*** ) which thinly wraps [a fork](https://github.com/JasonLG1979/librespot/tree/raspotify) of the awesome [librespot](https://github.com/librespot-org/librespot) library by [Paul Lietar](https://github.com/plietar) and others up as a [systemd](https://en.wikipedia.org/wiki/Systemd) [daemon](https://en.wikipedia.org/wiki/Daemon_(computing)).
 
@@ -12,23 +12,23 @@ Raspotify is intended to be used in a *[headless enviroment](https://en.wikipedi
 There are various *"guides"* floating around online. Most if not all of them are outdated and/or present incorrect information. **Don't follow them.**
 
 ```sh
-sudo apt-get -y install curl && curl -sL https://dtcooper.github.io/raspotify/install.sh | sh
+sudo apt-get -y install curl && curl -sL https://flbla.github.io/raspotify/install.sh | sh
 ```
 
 Or you can just download the latest .deb package and install it manually from here:
-* [`raspotify-latest_armhf.deb`](https://dtcooper.github.io/raspotify/raspotify-latest_armhf.deb)
-* [`raspotify-latest_arm64.deb`](https://dtcooper.github.io/raspotify/raspotify-latest_arm64.deb)
-* [`raspotify-latest_amd64.deb`](https://dtcooper.github.io/raspotify/raspotify-latest_amd64.deb)
+* [`raspotify-latest_armhf.deb`](https://flbla.github.io/raspotify/raspotify-latest_armhf.deb)
+* [`raspotify-latest_arm64.deb`](https://flbla.github.io/raspotify/raspotify-latest_arm64.deb)
+* [`raspotify-latest_amd64.deb`](https://flbla.github.io/raspotify/raspotify-latest_amd64.deb)
 
-### [Raspotify does NOT support ARMv6 Pi's (Pi v1 and Pi Zero v1.x)](https://github.com/dtcooper/raspotify/wiki/Raspotify-on-Pi-v1's-and-Pi-Zero-v1.x)
+### [Raspotify does NOT support ARMv6 Pi's (Pi v1 and Pi Zero v1.x)](https://github.com/flbla/raspotify/wiki/Raspotify-on-Pi-v1's-and-Pi-Zero-v1.x)
 
 ## Configuration
 
-The [wiki](https://github.com/dtcooper/raspotify/wiki) is full of useful information. The [Basic Setup Guide](https://github.com/dtcooper/raspotify/wiki/Basic-Setup-Guide) is a good place to start.
+The [wiki](https://github.com/flbla/raspotify/wiki) is full of useful information. The [Basic Setup Guide](https://github.com/flbla/raspotify/wiki/Basic-Setup-Guide) is a good place to start.
 
 ## Bug Reports, Questions and Feature Requests
 
-**Please read the [Troubleshooting Guide](https://github.com/dtcooper/raspotify/wiki/Troubleshooting), the [Basic Setup Guide](https://github.com/dtcooper/raspotify/wiki/Basic-Setup-Guide), and search though [open](https://github.com/dtcooper/raspotify/issues?q=is%3Aopen+is%3Aissue) and [closed](https://github.com/dtcooper/raspotify/issues?q=is%3Aissue+is%3Aclosed) issues and [discussions](https://github.com/dtcooper/raspotify/discussions) before opening an issue or asking a question.**
+**Please read the [Troubleshooting Guide](https://github.com/flbla/raspotify/wiki/Troubleshooting), the [Basic Setup Guide](https://github.com/flbla/raspotify/wiki/Basic-Setup-Guide), and search though [open](https://github.com/flbla/raspotify/issues?q=is%3Aopen+is%3Aissue) and [closed](https://github.com/flbla/raspotify/issues?q=is%3Aissue+is%3Aclosed) issues and [discussions](https://github.com/flbla/raspotify/discussions) before opening an issue or asking a question.**
 
 ## Disclaimer
 
@@ -46,7 +46,7 @@ Special thanks to [Paul Lietar](https://github.com/plietar), [librespot org](htt
 
 ### 📻 *"And Now, For Something Completely Different!"* 🎙️
 
-Raspotify's author [David Cooper](https://jew.pizza/) has abandoned being a software engineer to pursue a career as a radio personality. If you find Raspotify useful, you can support him by checking out his [radio work here](https://jew.pizza/) or [give him a follow on Twitter](https://twitter.com/dtcooper).
+Raspotify's author [David Cooper](https://jew.pizza/) has abandoned being a software engineer to pursue a career as a radio personality. If you find Raspotify useful, you can support him by checking out his [radio work here](https://jew.pizza/) or [give him a follow on Twitter](https://twitter.com/flbla).
 
 On a related note, [@JasonLG1979](https://github.com/JasonLG1979) has become the de-facto maintainer of the project. So an additional thank you to him as well.
 

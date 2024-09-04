@@ -2,7 +2,7 @@
 
 set -e
 
-SOURCE_REPO="deb [signed-by=/usr/share/keyrings/raspotify_key.asc] https://dtcooper.github.io/raspotify raspotify main"
+SOURCE_REPO="deb [signed-by=/usr/share/keyrings/raspotify_key.asc] https://flbla.github.io/raspotify raspotify main"
 ERROR_MESG="Please make sure you are running a compatible armhf (ARMv7), arm64, or amd64 Debian based OS."
 
 LIBC_MIN_VER="2.31"
@@ -36,7 +36,7 @@ if uname -a | grep -F -ivq -e armv7 -e aarch64 -e x86_64; then
 	echo "$ERROR_MESG"
 	echo "\nSupport for ARMv6 (Pi v1 and Pi Zero v1.x) has been dropped."
 	echo "0.31.8.1 was the last version to be built with ARMv6 support."
-	echo "\nhttps://github.com/dtcooper/raspotify/releases/tag/0.31.8.1\n"
+	echo "\nhttps://github.com/flbla/raspotify/releases/tag/0.31.8.1\n"
 	echo "You can install and run that version on an ARMv6 device,"
 	echo "but you will never get updates and doing so is completely unsupported."
 	exit 1
@@ -102,7 +102,7 @@ if [ "$MIN_NOT_MET" ]; then
 	exit 1
 fi
 
-curl -sSL https://dtcooper.github.io/raspotify/key.asc | $SUDO tee /usr/share/keyrings/raspotify_key.asc >/dev/null
+curl -sSL https://flbla.github.io/raspotify/key.asc | $SUDO tee /usr/share/keyrings/raspotify_key.asc >/dev/null
 $SUDO chmod 644 /usr/share/keyrings/raspotify_key.asc
 echo "$SOURCE_REPO" | $SUDO tee /etc/apt/sources.list.d/raspotify.list
 
@@ -110,6 +110,4 @@ $SUDO $APT update
 $SUDO $APT -y install raspotify
 
 echo "\nThanks for installing Raspotify! Don't forget to checkout the wiki for tips, tricks and configuration info!:\n"
-echo "https://github.com/dtcooper/raspotify/wiki"
-echo "\nAnd if you're feeling generous you could buy me a RedBull:\n"
-echo "https://github.com/sponsors/JasonLG1979"
+echo "https://github.com/flbla/raspotify/wiki"

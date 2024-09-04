@@ -2,7 +2,7 @@
 
 # A non-exhaustive list of librespot options and flags.
 
-# Please see https://github.com/dtcooper/raspotify/wiki &
+# Please see https://github.com/flbla/raspotify/wiki &
 # https://github.com/librespot-org/librespot/wiki/Options
 # for configuration details and a full list of options and flags.
 
@@ -137,6 +137,6 @@ LIBRESPOT_ENABLE_VOLUME_NORMALISATION=
 #
 # Commenting this out will cause librespot to use a tmpfs so that provided there
 # is enough RAM to hold the track nothing is written to disk but instead to a tmpfs.
-# See https://github.com/dtcooper/raspotify/discussions/567
+# See https://github.com/flbla/raspotify/discussions/567
 # And https://www.kernel.org/doc/html/latest/filesystems/tmpfs.html
 TMPDIR=/tmp
