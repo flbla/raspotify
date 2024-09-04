@@ -12,8 +12,8 @@ jobs:
     runs-on: ubuntu-latest
     name: Deploy Release
     env:
-      GPG_KEY_ID: ${{ secrets.GPG_KEY_ID }}
-      GPG_SECRET_KEY_BASE64: ${{ secrets.GPG_SECRET_KEY_BASE64 }}
+      #GPG_KEY_ID: ${{ secrets.GPG_KEY_ID }}
+      #GPG_SECRET_KEY_BASE64: ${{ secrets.GPG_SECRET_KEY_BASE64 }}
       RELEASE_TAG: ${{ github.event.inputs.tag }}
 
     steps:
