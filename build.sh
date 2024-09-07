@@ -39,7 +39,7 @@ packages() {
 	if [ ! -d librespot ]; then
 		git clone https://github.com/librespot-org/librespot
 		cd librespot
-		git checkout raspotify
+		git checkout dev
 		cd /mnt/raspotify
 	fi
 
@@ -60,7 +60,7 @@ packages() {
 	LIBRESPOT_HASH="$(git rev-parse HEAD | cut -c 1-7 2>/dev/null || echo unknown)"
 
 	echo "Build Librespot binary..."
-	cargo build --jobs "$(nproc)" --profile raspotify --target "$BUILD_TARGET" --no-default-features --features "alsa-backend pulseaudio-backend"
+	cargo build --jobs "$(nproc)" --profile dev --target "$BUILD_TARGET" --no-default-features --features "alsa-backend pulseaudio-backend"
 
 	echo "Copy Librespot binary to package root..."
 	cd /mnt/raspotify
