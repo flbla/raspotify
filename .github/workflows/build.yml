@@ -1,0 +1,68 @@
+name: Build Raspotify
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v1
+
+    - name: Cache Docker layers
+      uses: actions/cache@v2
+      with:
+        path: /tmp/.buildx-cache
+        key: ${{ runner.os }}-buildx-${{ github.sha }}
+        restore-keys: |
+          ${{ runner.os }}-buildx-
+
+    - name: Build Docker image
+      run: |
+        docker build --tag raspotify-builder .
+
+    - name: Run build script inside Docker
+      run: |
+        docker run --rm \
+          -e INSIDE_DOCKER_CONTAINER=1 \
+          -e ARCHITECTURE=all \
+          -e PERMFIX_UID=$(id -u) \
+          -e PERMFIX_GID=$(id -g) \
+          -v $PWD:/mnt/raspotify \
+          raspotify-builder \
+          /mnt/raspotify/build.sh
+
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: raspotify-packages
+        path: |
+          *.deb
+
+    - name: Create GitHub Release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ github.sha }}
+        release_name: Release ${{ github.sha }}
+        draft: false
+        prerelease: false
+
+    - name: Upload Release Assets
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: /mnt/raspotify/*.deb
+        asset_name: raspotify_${{ github.sha }}.deb
+        asset_content_type: application/octet-stream
