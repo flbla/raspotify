@@ -1,9 +1,11 @@
 name: Build Raspotify
 
 on:
-  push:
-    tags:
-      - '*'
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Tag of release with .deb file asset attached it, for example 0.31.5'
+        required: true
 
 jobs:
   build:
@@ -52,8 +54,8 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: ${{ github.sha }}
-        release_name: Release ${{ github.sha }}
+        tag_name: ${{ github.event.inputs.tag }}
+        release_name: Release ${{ github.event.inputs.tag }}
         draft: false
         prerelease: false
 
